@@ -16,8 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from sign import views
+from django.conf.urls import url
 
 urlpatterns = [
+    url(r'^$', views.index),
     path('admin/', admin.site.urls),
     path('index/', views.index),
+    path('login_action/', views.login_action),
+    path('event_manage/', views.event_manage),
+    url(r'^accounts/login/$', views.index),
 ]
